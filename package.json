@@ -18,12 +18,17 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@blueprintjs/core": "^5.9.1",
     "clsx": "^2.0.0",
+    "fuse.js": "^7.0.0",
     "lucide-react": "^0.321.0",
+    "nanoid": "^5.0.5",
     "next": "^14.0.4",
+    "ramda": "^0.29.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
+    "reactflow": "^11.10.3",
     "tailwind-merge": "^2.1.0"
   },
   "devDependencies": {
