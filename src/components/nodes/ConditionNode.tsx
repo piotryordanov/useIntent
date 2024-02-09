@@ -50,6 +50,11 @@ function ConditionNode({ id }: any) {
       nodeId={id}
     >
       <TreeView initial_state={tree} />
+      <div className='mt-4 w-80'>
+        This node, would allow creating complex conditional statement. The
+        initial example is an "OR" example, where it's either the first
+        condition, or the second condition that is enough to trigger an intent
+      </div>
     </BaseNode>
   );
 }

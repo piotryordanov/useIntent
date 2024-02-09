@@ -5,6 +5,7 @@ import { MdAutoGraph } from 'react-icons/md';
 import { MdDeleteOutline } from 'react-icons/md';
 import { TbLogicAnd, TbLogicBuffer, TbLogicXnor } from 'react-icons/tb';
 import { FaPeopleGroup } from 'react-icons/fa6';
+import { GiBrainFreeze } from 'react-icons/gi';
 
 const icons = {
   data: FaDatabase,
@@ -17,6 +18,7 @@ const icons = {
   delete: MdDeleteOutline,
   add: IoIosAddCircleOutline,
   gossip: FaPeopleGroup,
+  smartNode: GiBrainFreeze,
 };
 
 export default icons;

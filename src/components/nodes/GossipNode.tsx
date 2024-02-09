@@ -13,7 +13,7 @@ function GossipNode({ id }: any) {
   const [tree, setTree] = React.useState(null);
 
   const edges = useEdges();
-  console.log(edges);
+  // console.log(edges);
 
   let isConnected = false;
   edges.map((edge) => {
@@ -21,7 +21,7 @@ function GossipNode({ id }: any) {
       isConnected = true;
     }
   });
-  console.log(isConnected);
+  // console.log(isConnected);
 
   return (
     <BaseNode

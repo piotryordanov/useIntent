@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@blueprintjs/core": "^5.9.1",
+    "@blueprintjs/select": "^5.1.1",
     "clsx": "^2.0.0",
     "fuse.js": "^7.0.0",
     "lucide-react": "^0.321.0",

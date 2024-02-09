@@ -6,6 +6,7 @@ import FlowPanel from '@/components/FlowPanel';
 import BuildProvider from '@/data/context';
 import ConditionNode from '@/components/nodes/ConditionNode';
 import GossipNode from '@/components/nodes/GossipNode';
+import SmartNode from '@/components/nodes/SmartNode';
 
 function Page() {
   const [rfInstance, setRfInstance] = useState<any>(null);
@@ -13,6 +14,7 @@ function Page() {
   const nodeTypes = {
     conditionNode: ConditionNode,
     gossipNode: GossipNode,
+    smartNode: SmartNode,
   };
   const defaultFlow = {
     nodes: [
@@ -21,17 +23,34 @@ function Page() {
         type: 'conditionNode',
         dragHandle: '.node-drag-handle',
         data: { title: 'Asset' },
-        position: { x: 300, y: 100 },
+        position: { x: 150, y: 50 },
       },
       {
         id: 'gossip_1',
         type: 'gossipNode',
         dragHandle: '.node-drag-handle',
         data: { title: 'Asset' },
-        position: { x: 1000, y: 150 },
+        position: { x: 700, y: 100 },
+      },
+      {
+        id: 'condition_2',
+        type: 'smartNode',
+        dragHandle: '.node-drag-handle',
+        data: { title: 'Asset' },
+        position: { x: 650, y: 400 },
+      },
+      {
+        id: 'gossip_2',
+        type: 'gossipNode',
+        dragHandle: '.node-drag-handle',
+        data: { title: 'Asset' },
+        position: { x: 1100, y: 300 },
       },
     ],
-    edges: [{ id: 'ed-1', source: 'condition_1', target: 'gossip_1' }],
+    edges: [
+      { id: 'ed-1', source: 'condition_1', target: 'gossip_1' },
+      { id: 'ed-2', source: 'condition_2', target: 'gossip_2' },
+    ],
   };
 
   return (

@@ -17,31 +17,22 @@ const ActionButtons = [
     strategyValue: strategies[0].conditions.condition_2,
   },
   {
-    tooltip: 'Add Data Source',
-    icon: <icons.data className={defaultClass} />,
+    tooltip: 'Add Smart Condition',
+    icon: <icons.smartNode className={defaultClass} />,
     color: 'text-gray-300',
-    data: {},
-    nodeType: 'dataNode',
-    strategyKey: 'data',
-    strategyValue: strategies[0].data.data_1,
-  },
-  {
-    tooltip: 'Add Long Signal',
-    icon: <icons.longSignal className={defaultClass} />,
-    color: 'text-green-300',
     data: { direction: 'long' },
     nodeType: 'positionNode',
     strategyKey: 'signals',
     strategyValue: strategies[0].signals.signal_1,
   },
   {
-    tooltip: 'Add Short Signal',
-    icon: <icons.shortSignal className={defaultClass} />,
-    color: 'text-red-300',
-    data: { direction: 'short' },
-    nodeType: 'positionNode',
-    strategyKey: 'signals',
-    strategyValue: strategies[0].signals.signal_1,
+    tooltip: 'Add Gossip Node',
+    icon: <icons.gossip className={defaultClass} />,
+    color: 'text-gray-300',
+    data: {},
+    nodeType: 'dataNode',
+    strategyKey: 'data',
+    strategyValue: strategies[0].data.data_1,
   },
 ];
 
@@ -60,11 +51,17 @@ const FlowPanel = () => {
 
   return (
     <Panel className='h-screen p-0' position='top-left'>
+      <Tooltip content={'Drag the below icons into the board'}>
+        <div className='text-center bg-slate-700 cursor-grab text-gray-400 w-9 rounded'>
+          Drag <br />
+          Me
+        </div>
+      </Tooltip>
       <div className=' flex flex-col'>
         {ActionButtons.map((item) => (
           <Tooltip key={item.tooltip} content={item.tooltip}>
             <div
-              className={`shadow-2 my-2 rounded bg-slate-700 p-2 ${item.color}`}
+              className={`shadow-2 my-2 cursor-grab rounded bg-slate-700 p-2 ${item.color}`}
               onDragStart={(event) => onDragStart(event, item)}
               draggable
             >
