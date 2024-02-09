@@ -4,6 +4,7 @@ import { IoIosAddCircleOutline } from 'react-icons/io';
 import { MdAutoGraph } from 'react-icons/md';
 import { MdDeleteOutline } from 'react-icons/md';
 import { TbLogicAnd, TbLogicBuffer, TbLogicXnor } from 'react-icons/tb';
+import { FaPeopleGroup } from 'react-icons/fa6';
 
 const icons = {
   data: FaDatabase,
@@ -15,6 +16,7 @@ const icons = {
   logicalOR: TbLogicBuffer,
   delete: MdDeleteOutline,
   add: IoIosAddCircleOutline,
+  gossip: FaPeopleGroup,
 };
 
 export default icons;

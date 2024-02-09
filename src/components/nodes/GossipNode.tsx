@@ -1,11 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import { TbLogicXnor } from 'react-icons/tb';
+import icons from '@/lib/icons';
+
+import { useEdges } from 'reactflow';
 
 import { BuildContext } from '@/data/context';
-import useTree from '@/data/TreeData/useTree';
-
-import createConditionsTree from '@/components/conditions/createConditionsTree';
-import { TreeView } from '@/components/conditions/TreeView';
 import BaseNode from '@/components/flow/BaseNode';
 
 function GossipNode({ id }: any) {
@@ -13,43 +12,35 @@ function GossipNode({ id }: any) {
   const { context, setContext } = useContext(BuildContext);
   const [tree, setTree] = React.useState(null);
 
-  useEffect(() => {
-    const updateTree = (newTree: any) => {
-      setContext((prev: any) => {
-        prev.strategies[prev.selectedStrategy].conditions[id] = newTree;
-        return { ...prev };
-      });
-    };
-    const conditionTree =
-      context.strategies[context.selectedStrategy].conditions[id];
+  const edges = useEdges();
+  console.log(edges);
 
-    if (conditionTree) {
-      const newTree = createConditionsTree(
-        conditionTree,
-        id,
-        updateTree,
-        useTree
-      );
-      setTree(newTree);
+  let isConnected = false;
+  edges.map((edge) => {
+    if (edge.target == id) {
+      isConnected = true;
     }
-  }, [context, id, setContext]);
+  });
+  console.log(isConnected);
 
-  if (tree === null) {
-    return null;
-  }
   return (
     <BaseNode
       centerTitle={false}
-      title='Condition Name'
+      title='Gossip Time'
       handles={[
-        // { type: 'target', position: 'left' },
-        { type: 'source', position: 'right' },
+        { type: 'target', position: 'left' },
+        // { type: 'source', position: 'right' },
       ]}
-      editable={true}
-      leftIcon={<TbLogicXnor />}
+      editable={false}
+      leftIcon={<icons.gossip />}
       nodeId={id}
     >
-      <TreeView initial_state={tree} />
+      {!isConnected && <div className=''>Please connect the node</div>}
+      {isConnected && (
+        <div className=''>
+          <div className=''>Node Connected</div>
+        </div>
+      )}
     </BaseNode>
   );
 }

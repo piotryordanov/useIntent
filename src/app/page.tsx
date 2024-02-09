@@ -28,10 +28,10 @@ function Page() {
         type: 'gossipNode',
         dragHandle: '.node-drag-handle',
         data: { title: 'Asset' },
-        position: { x: 500, y: 100 },
+        position: { x: 1000, y: 150 },
       },
     ],
-    edges: [],
+    edges: [{ id: 'ed-1', source: 'condition_1', target: 'gossip_1' }],
   };
 
   return (

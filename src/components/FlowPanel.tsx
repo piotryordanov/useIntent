@@ -14,7 +14,7 @@ const ActionButtons = [
     data: {},
     nodeType: 'conditionNode',
     strategyKey: 'conditions',
-    strategyValue: strategies[0].conditions.condition_1,
+    strategyValue: strategies[0].conditions.condition_2,
   },
   {
     tooltip: 'Add Data Source',
