@@ -47,10 +47,7 @@ function Page() {
         position: { x: 1100, y: 300 },
       },
     ],
-    edges: [
-      { id: 'ed-1', source: 'condition_1', target: 'gossip_1' },
-      { id: 'ed-2', source: 'condition_2', target: 'gossip_2' },
-    ],
+    edges: [{ id: 'ed-1', source: 'condition_1', target: 'gossip_1' }],
   };
 
   return (
